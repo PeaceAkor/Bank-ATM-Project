@@ -154,5 +154,89 @@ public class BankATMUI {
             }
         });
     }
+    JFrame FrameCurrent = new JFrame("window");
+    JLabel BalanceCurrent = new JLabel("Balance: "+uniChar+"100000");.
+    JButton depositCurrent = new JButton("Deposit");
+    JButton withdrawCurrent = new JButton("Withdraw");
+
+    public void currentUI() {
+        FrameCurrent.setSize(450, 500);
+        FrameCurrent.setLayout(new GridLayout(3, 1));
+        FrameCurrent.setVisible(true);
+        FrameCurrent.setLocationRelativeTo(null);
+        FrameCurrent.setTitle("Account: Current");
+
+        FrameCurrent.add(BalanceCurrent);
+        FrameCurrent.add(depositCurrent);
+        FrameCurrent.add(withdrawCurrent);
+
+        depositCurrent.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                depositCurrentUI();
+            }
+        });
+        withdrawCurrent.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                withdrawCurrentUI();
+            }
+        });
+    }
+    JFrame FrameDepositCurrent = new JFrame("window");
+    JButton DepositCurrent = new JButton("Deposit");
+    //    JLabel Welcome = new JLabel("");
+    JLabel AmountDepCurrent = new JLabel(" Enter Deposit Amount:");
+    JTextField AmountFieldDepCurrent = new JTextField();
+//    JLabel test = new JLabel(AmountFieldDepSave);
+
+    public void depositCurrentUI(){
+        FrameDepositCurrent.setSize(450, 500);
+        FrameDepositCurrent.setLayout(new GridLayout(3, 1));
+        FrameDepositCurrent.setVisible(true);
+        FrameDepositCurrent.setLocationRelativeTo(null);
+        FrameDepositCurrent.setTitle("Deposit");
+
+        FrameDepositCurrent.add(AmountDepCurrent);
+        FrameDepositCurrent.add(AmountFieldDepCurrent);
+        FrameDepositCurrent.add(DepositCurrent);
+
+        DepositCurrent.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                BankATM assObj = new BankATM();
+                float answer1 = assObj.balance1 (Float.parseFloat(AmountFieldDepCurrent.getText()));
+                JOptionPane.showMessageDialog(null, "You new balance " +uniChar+answer1);
+            }
+        });
+    }
+    JFrame FrameWithdrawCurrent = new JFrame("window");
+    JButton WithdrawCurrent = new JButton("Withdraw");
+    //    JLabel Welcome = new JLabel("");
+    JLabel AmountWithCurrent = new JLabel(" Enter Withdrawal Amount:");
+    JTextField AmountFieldWithCurrent = new JTextField();
+
+    public void withdrawCurrentUI() {
+        FrameWithdrawCurrent.setSize(450, 500);
+        FrameWithdrawCurrent.setLayout(new GridLayout(3, 1));
+        FrameWithdrawCurrent.setVisible(true);
+        FrameWithdrawCurrent.setLocationRelativeTo(null);
+        FrameWithdrawCurrent.setTitle("Withdrawal");
+
+        FrameWithdrawCurrent.add(AmountWithCurrent);
+        FrameWithdrawCurrent.add(AmountFieldWithCurrent);
+        FrameWithdrawCurrent.add(WithdrawCurrent);
+
+        WithdrawCurrent.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                BankATM assObj = new BankATM();
+//                float WithCurrent = (Float.parseFloat(AmountFieldWithCurrent.getText()));
+                float solution1 = assObj.withdrawalBalance(Float.parseFloat(AmountFieldWithCurrent.getText()));
+                JOptionPane.showMessageDialog(null, "You withdrew " +uniChar+solution1);
+            }
+        });
+    }
+}
 
 
