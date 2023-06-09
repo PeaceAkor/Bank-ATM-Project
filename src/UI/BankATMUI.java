@@ -17,7 +17,8 @@ public class BankATMUI {
         Frame.setVisible(true);
         Frame.setLocationRelativeTo(null);
         Frame.setTitle("Welcome to Winner's bank");
-        Frame.setBackground(Color.BLUE);
+        Frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        
         Frame.add(Password);
         Frame.add(PasswordField);
         Frame.add(Login);
@@ -39,20 +40,19 @@ public class BankATMUI {
     JFrame Frame2 = new JFrame("Window");
     JButton accountTypeSavings = new JButton("Savings Account");
     JButton accountTypeCurrent = new JButton("Current Account");
-    JTextField accountTypeField = new JTextField();
-
+    
     public void accountTypeUI()
 
     {
-        Frame.setSize(450, 500);
-        Frame.setLayout(new GridLayout(2, 1));
-        Frame.setVisible(true);
-        Frame.setLocationRelativeTo(null);
-        Frame.setTitle("Choose your account type");
+        Frame2.setSize(450, 500);
+        Frame2.setLayout(new GridLayout(2, 1));
+        Frame2.setVisible(true);
+        Frame2.setLocationRelativeTo(null);
+        Frame2.setTitle("Choose your account type");
 
-        Frame.add(accountTypeSavings);
-        Frame.add(accountTypeCurrent);
-        Frame.add(accountTypeField);
+        Frame2.add(accountTypeSavings);
+        Frame2.add(accountTypeCurrent);
+        Frame2.add(accountTypeField);
 
         accountTypeSavings.addActionListener(new ActionListener() {
             @Override
@@ -71,8 +71,7 @@ public class BankATMUI {
     JLabel Balance = new JLabel("Balance: "+uniChar+"100000");
     JButton DepositSavings = new JButton("Deposit");
     JButton WithdrawSavings = new JButton("Withdraw");
-    JTextField WithdrawSavingsField = new JTextField();
-
+    
     public void savingsUI() {
         FrameSavings.setSize(450, 500);
         FrameSavings.setLayout(new GridLayout(3, 1));
@@ -83,7 +82,6 @@ public class BankATMUI {
         FrameSavings.add(Balance);
         FrameSavings.add(DepositSavings);
         FrameSavings.add(WithdrawSavings);
-        FrameSavings.add(WithdrawSavingsField);
 
         DepositSavings.addActionListener(new ActionListener() {
             @Override
@@ -109,7 +107,8 @@ public class BankATMUI {
         FrameDepositSave.setVisible(true);
         FrameDepositSave.setLocationRelativeTo(null);
         FrameDepositSave.setTitle("Deposit");
-
+        FrameDepositSave.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        
         FrameDepositSave.add(AmountDepositSave);
         FrameDepositSave.add(AmountFieldDepositSave);
         FrameDepositSave.add(DepositSave);
@@ -135,6 +134,7 @@ public class BankATMUI {
         FrameWithdrawSave.setVisible(true);
         FrameWithdrawSave.setLocationRelativeTo(null);
         FrameWithdrawSave.setTitle("Withdrawal");
+        FrameWithdrawSave.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         FrameWithdrawSave.add(AmountWithSave);
         FrameWithdrawSave.add(AmountFieldWithSave);
@@ -165,6 +165,7 @@ public class BankATMUI {
         FrameCurrent.setVisible(true);
         FrameCurrent.setLocationRelativeTo(null);
         FrameCurrent.setTitle("Account: Current");
+        FrameCurrent.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         FrameCurrent.add(BalanceCurrent);
         FrameCurrent.add(depositCurrent);
@@ -196,6 +197,7 @@ public class BankATMUI {
         FrameDepositCurrent.setVisible(true);
         FrameDepositCurrent.setLocationRelativeTo(null);
         FrameDepositCurrent.setTitle("Deposit");
+        FrameDepositCurrent.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         FrameDepositCurrent.add(AmountDepCurrent);
         FrameDepositCurrent.add(AmountFieldDepCurrent);
@@ -222,6 +224,7 @@ public class BankATMUI {
         FrameWithdrawCurrent.setVisible(true);
         FrameWithdrawCurrent.setLocationRelativeTo(null);
         FrameWithdrawCurrent.setTitle("Withdrawal");
+        FrameWithdrawCurrent.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         FrameWithdrawCurrent.add(AmountWithCurrent);
         FrameWithdrawCurrent.add(AmountFieldWithCurrent);
